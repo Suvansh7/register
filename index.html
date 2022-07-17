@@ -1,51 +1,49 @@
 <Html>
     <head>
       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1.0">
-    <title>
-    Registration Page
-    </title>
+      <br><h1><label style="color:rgb(52, 157, 0)">ServiZilla</label></h1><br>
     </head>
-    <body bgcolor="cian">
+    <body style="background-color:rgb(3, 38, 69);">>
     <br>
-    <br>
+  
     <form>
+ 
+     <label style="color:rgb(52, 157, 0)">Name :</label><br>
+    <input style="color:rgb(203, 255, 176)" type="text" name="firstname" size="15" id="n" /> <br> <br>
+    <label style="color:rgb(52, 157, 0)">  Company Name:</label><br> 
+    <input style="color:rgb(203, 255, 176)" type="text" name="Company Name" id=cn size="30"/> <br> <br>
     
-    <label>Name :</label><br>
-    <input type="text" name="firstname" size="15"/> <br> <br>
-    <label> Company Name:</label><br> 
-    <input type="text" name="Company Name" size="30"/> <br> <br>
     
-    
-    <label>
+    <label  style="color:rgb(52, 157, 0)">
     Phone No. :
     </label><br>
-    <input type="text" name="country code"  value="+91" size="2"/>
-    <input type="text" name="phone" size="10"/> <br> <br>
-    <label>
+
+    <input style="color:rgb(203, 255, 176)" type="text" name="phone" size="10" id="pn"/> <br> <br>
+    <label style="color:rgb(52, 157, 0)">
     Alternate Phone No. :
     </label><br>
-    <input type="text" name="country code"  value="+91" size="2"/>
-    <input type="text" name="phone" size="10"/> <br> <br>
-    Home Address :
+ 
+    <input style="color:rgb(203, 255, 176)" type="text" name="phone" size="10" id="apn" /> <br> <br>
+    <label style="color:rgb(52, 157, 0)"> Address :</label>
     <br>
-    <textarea cols="80" rows="5" value="address">
+    <textarea style="color:rgb(203, 255, 176)" cols="80" rows="5" value="address" id="hadd">
     </textarea>
-    <br> <br>
-    Work Address :
+    <br> <br><label style="color:rgb(52, 157, 0)">Work Address :</label>
+    
     <br>
-    <textarea cols="80" rows="5" value="address">
+    <textarea cols="80" rows="5" value="address" id="wadd">
     </textarea>
-    <br> <br>
-    Category: <select name="category" id="subject">
-      <option value="" selected="selected">Select Category</option>
+    <br> <br><label style="color:rgb(52, 157, 0)">Category: </label>
+     <select name="category" id="subject">
+      <option value="" selected="selected">Select</option>
     </select>
-    <br><br>
-    Subcategory: <select name="subcategory" id="topic">
-      <option value="" selected="selected">Please select Category first</option>
+    <br><br><label style="color:rgb(52, 157, 0)">Subcategory: </label>
+    <select name="subcategory" id="topic">
+      <option value="" selected="selected">Select</option>
     </select>
-    <br><br>
-    detailing: <select name="chapter" id="chapter">
-      <option value="" selected="selected">Please select topic first</option>
+    <br><br><label style="color:rgb(52, 157, 0)">Detailing:</label>
+     <select name="chapter" id="chapter">
+      <option value="" selected="selected">Select</option>
     </select>
     <br><br>
     <input type="submit" value="Submit">
