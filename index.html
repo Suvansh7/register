@@ -1,93 +1,164 @@
 <Html>
-    <head>
-      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1.0">
-      <br><h1><label style="color:rgb(52, 157, 0)">ServiZilla</label></h1><br>
-    </head>
-    <body style="background-color:rgb(3, 38, 69);">>
-    <br>
-  
-    <form>
- 
-     <label style="color:rgb(52, 157, 0)">Name :</label><br>
-    <input style="color:rgb(203, 255, 176)" type="text" name="firstname" size="15" id="n" /> <br> <br>
-    <label style="color:rgb(52, 157, 0)">  Company Name:</label><br> 
-    <input style="color:rgb(203, 255, 176)" type="text" name="Company Name" id=cn size="30"/> <br> <br>
-    
-    
-    <label  style="color:rgb(52, 157, 0)">
-    Phone No. :
-    </label><br>
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1.0">
+    <br><h1><label>ServiZilla</label></h1><br>
+  </head>
+  <body style="background-color:rgb(3, 38, 69);">>
+  <br>
+  <br>
+  <form>
 
-    <input style="color:rgb(203, 255, 176)" type="text" name="phone" size="10" id="pn"/> <br> <br>
-    <label style="color:rgb(52, 157, 0)">
-    Alternate Phone No. :
-    </label><br>
- 
-    <input style="color:rgb(203, 255, 176)" type="text" name="phone" size="10" id="apn" /> <br> <br>
-    <label style="color:rgb(52, 157, 0)"> Address :</label>
-    <br>
-    <textarea style="color:rgb(203, 255, 176)" cols="80" rows="5" value="address" id="hadd">
-    </textarea>
-    <br> <br><label style="color:rgb(52, 157, 0)">Work Address :</label>
-    
-    <br>
-    <textarea cols="80" rows="5" value="address" id="wadd">
-    </textarea>
-    <br> <br><label style="color:rgb(52, 157, 0)">Category: </label>
-     <select name="category" id="subject">
-      <option value="" selected="selected">Select</option>
-    </select>
-    <br><br><label style="color:rgb(52, 157, 0)">Subcategory: </label>
-    <select name="subcategory" id="topic">
-      <option value="" selected="selected">Select</option>
-    </select>
-    <br><br><label style="color:rgb(52, 157, 0)">Detailing:</label>
-     <select name="chapter" id="chapter">
-      <option value="" selected="selected">Select</option>
-    </select>
-    <br><br>
-    <input type="submit" value="Submit">
+   <label style="color:rgb(52, 157, 0)">Name :</label><br>
+  <input type="text" name="firstname" size="15" id="n" /> <br> <br>
+  <label> style="color:rgb(52, 157, 0)" Company Name:</label><br> 
+  <input type="text" name="Company Name" id="cn" size="30"/> <br> <br>
   
-    </form>
-    <script>
-      var subjectObject = {
-        "Healthcare": {
-          "gym trainer": ["for male", "for female"],
-          "yoga instructor": ["female", "male"],
-          "pathology test": ["full body", "blood test", "vidal",]
-        },
-        "security": {
-          "cctv": ["for home", "for workplace"],
-          "industrial guard": ["political","general purpose"]
+  
+  <label>style="color:rgb(52, 157, 0)"
+  Phone No. :
+  </label><br>
+
+  <input type="text" name="phone" size="10" id="pn"/> <br> <br>
+  <label>style="color:rgb(52, 157, 0)"
+  Alternate Phone No. :
+  </label><br>
+
+  <input type="text" name="phone" size="10" id="apn" /> <br> <br>style="color:rgb(52, 157, 0)"
+  Home Address :
+  <br>
+  <textarea cols="80" rows="5" value="address" id="hadd">
+  </textarea>
+  <br> <br>style="color:rgb(52, 157, 0)"
+  Work Address :
+  <br>
+  <textarea cols="80" rows="5" value="address" id="wadd">
+  </textarea>
+  <br> <br>style="color:rgb(52, 157, 0)"
+  Category: <select name="category" id="subject">
+    <option value="" selected="selected">Select Category</option>
+  </select>
+  <br><br>style="color:rgb(52, 157, 0)"
+  Subcategory: <select name="subcategory" id="topic">
+    <option value="" selected="selected">Please select Category first</option>
+  </select>
+  <br><br>style="color:rgb(52, 157, 0)"
+  detailing: <select name="chapter" id="chapter">
+    <option value="" selected="selected">Please select topic first</option>
+  </select>
+  <br><br>
+  <button id="submit_msg" type="button">Submit</button>
+
+  </form>
+  <script>
+    var subjectObject = {
+      "Healthcare": {
+        "gym trainer": ["for male", "for female"],
+        "yoga instructor": ["female", "male"],
+        "pathology test": ["full body", "blood test", "vidal",]
+      },
+      "security": {
+        "cctv": ["for home", "for workplace"],
+        "industrial guard": ["political","general purpose"]
+      }
+    }
+    window.onload = function() {
+      var subjectSel = document.getElementById("subject");
+      var topicSel = document.getElementById("topic");
+      var chapterSel = document.getElementById("chapter");
+      for (var x in subjectObject) {
+        subjectSel.options[subjectSel.options.length] = new Option(x, x);
+      }
+      subjectSel.onchange = function() {
+        //empty Chapters- and Topics- dropdowns
+        chapterSel.length = 1;
+        topicSel.length = 1;
+        //display correct values
+        for (var y in subjectObject[this.value]) {
+          topicSel.options[topicSel.options.length] = new Option(y, y);
         }
       }
-      window.onload = function() {
-        var subjectSel = document.getElementById("subject");
-        var topicSel = document.getElementById("topic");
-        var chapterSel = document.getElementById("chapter");
-        for (var x in subjectObject) {
-          subjectSel.options[subjectSel.options.length] = new Option(x, x);
-        }
-        subjectSel.onchange = function() {
-          //empty Chapters- and Topics- dropdowns
-          chapterSel.length = 1;
-          topicSel.length = 1;
-          //display correct values
-          for (var y in subjectObject[this.value]) {
-            topicSel.options[topicSel.options.length] = new Option(y, y);
-          }
-        }
-        topicSel.onchange = function() {
-          //empty Chapters dropdown
-          chapterSel.length = 1;
-          //display correct values
-          var z = subjectObject[subjectSel.value][this.value];
-          for (var i = 0; i < z.length; i++) {
-            chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
-          }
+      topicSel.onchange = function() {
+        //empty Chapters dropdown
+        chapterSel.length = 1;
+        //display correct values
+        var z = subjectObject[subjectSel.value][this.value];
+        for (var i = 0; i < z.length; i++) {
+          chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
         }
       }
-      
+    }
+    
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-firestore.js"></script>
+  <script type="text/javascript">
+    (function(){
+      var firebaseConfig = {
+      apiKey: "AIzaSyAvhe4Nl6UXq7Llt_SXxh5UkaesDx4ghdM",
+      authDomain: "servizillaweb.firebaseapp.com",
+      projectId: "servizillaweb",
+      storageBucket: "servizillaweb.appspot.com",
+      messagingSenderId: "1030643070219",
+      appId: "1:1030643070219:web:ba57c864e06d398e461e0e",
+      measurementId: "G-LPYF0XZWQJ"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    var push_to_firebase = function(data){
+      alert("Thanks for sending a message. I'll try and get back to you as soon as possible.")
+      var db = firebase.firestore();
+
+      db.collection("data").add({
+          Name: data["n"],
+          CompanyName: data["cn"],
+          PhoneNumber: data["pn"],
+          AltPhoneNumber: data["apn"],
+          HomeAddress: data["hadd"],
+          WorkAddress: data["wadd"],
+          Category: data["subject"],
+          SubCategory: data["topic"],
+          Detailing: data["chapter"],
+          timestamp: Date.now()
+      })
+      .then(function(docRef) {
+          console.log("Data sent, ID: ", docRef.id);
+          location.reload();
+      })
+      .catch(function(error) {
+          console.error("Data could not be sent: ", error);
+      });
+    }
+
+    var contact_submit = function(){
+      var name = document.getElementById("name");
+      var cmpnam = document.getElementById("cn");
+      var phone = document.getElementById("pn");
+      var altphone = document.getElementById("apn");
+      var homeadd = document.getElementById("hadd");
+      var workadd = document.getElementById("wadd");
+      var cat = document.getElementById("subject");
+      var subcat = document.getElementById("topic");
+      var detailing = document.getElementById("chapter");
+
+      var data = {
+        "name": name.value,
+        "cmpnam": cmpnam.value,
+        "phone": phone.value,
+        "altphone": altphone.value,
+        "homeadd": homeadd.value,
+        "workadd": workadd.value,
+        "cat": cat.value,
+        "subcat": subcat.value,
+        "detailing": detailing.value
+      }
+      push_to_firebase(data);
+
+    }
+
+    document.getElementById("submit_msg").addEventListener("click", contact_submit);
+
+
+  })();
     </script>
-    </body>
-    </html>
+  </body>
+  </html>
