@@ -1,164 +1,251 @@
-<Html>
-  <head>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1.0">
-    <br><h1><label>ServiZilla</label></h1><br>
-  </head>
-  <body style="background-color:rgb(3, 38, 69);">>
-  <br>
-  <br>
-  <form>
+<!DOCTYPE html>
+<html lang="en">
 
-   <label style="color:rgb(52, 157, 0)">Name :</label><br>
-  <input type="text" name="firstname" size="15" id="n" /> <br> <br>
-  <label> style="color:rgb(52, 157, 0)" Company Name:</label><br> 
-  <input type="text" name="Company Name" id="cn" size="30"/> <br> <br>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Messages | Firebase</title>
+    <link rel="stylesheet" href="./styles.css">
+
+
+    <style> 
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 21px;
+        margin: 10px;
+        text-align: center;
+        color: rgb(77, 246, 218);
+        background: #101820ff;
+      }
+      h1 {
+        text-align: center;
+        color: rgb(255, 110, 32);
+        font-family:
+      }
+      #name{
+        border-radius: 10px;
+        height: 25px;
+      }
+      #cname{
+        border-radius: 10px;
+        height: 25px;
+      }
+
+      #pn{
+        border-radius: 10px;
+        height: 25px;
+      }
+      #apn{
+        border-radius: 10px;
+        height: 25px;
+      }
+      #ha{
+        border-radius: 10px;
+        width: 500px;
+        padding: auto;
+      }
+      #wa{
+        border-radius: 10px;
+        width: 500px;
+        padding: auto;
+      }
+      #submit{
+        font-size: 25px;
   
-  
-  <label>style="color:rgb(52, 157, 0)"
-  Phone No. :
-  </label><br>
+        color: rgb(32, 255, 214);
+        border-radius: 7px;
+        background: #101820ff;
+        border: solid ;
+      }
+      #subject{
+        border-radius: 10px;
+        height: 25px;
+      }
+      #topic{
+        border-radius: 10px;
+        height: 25px;
+      }
+      #chapter{
+        border-radius: 10px;
+        height: 25px;
+      }
+    </style>
 
-  <input type="text" name="phone" size="10" id="pn"/> <br> <br>
-  <label>style="color:rgb(52, 157, 0)"
-  Alternate Phone No. :
-  </label><br>
 
-  <input type="text" name="phone" size="10" id="apn" /> <br> <br>style="color:rgb(52, 157, 0)"
-  Home Address :
-  <br>
-  <textarea cols="80" rows="5" value="address" id="hadd">
-  </textarea>
-  <br> <br>style="color:rgb(52, 157, 0)"
-  Work Address :
-  <br>
-  <textarea cols="80" rows="5" value="address" id="wadd">
-  </textarea>
-  <br> <br>style="color:rgb(52, 157, 0)"
-  Category: <select name="category" id="subject">
-    <option value="" selected="selected">Select Category</option>
-  </select>
-  <br><br>style="color:rgb(52, 157, 0)"
-  Subcategory: <select name="subcategory" id="topic">
-    <option value="" selected="selected">Please select Category first</option>
-  </select>
-  <br><br>style="color:rgb(52, 157, 0)"
-  detailing: <select name="chapter" id="chapter">
-    <option value="" selected="selected">Please select topic first</option>
-  </select>
-  <br><br>
-  <button id="submit_msg" type="button">Submit</button>
+</head>
 
-  </form>
-  <script>
-    var subjectObject = {
-      "Healthcare": {
-        "gym trainer": ["for male", "for female"],
-        "yoga instructor": ["female", "male"],
-        "pathology test": ["full body", "blood test", "vidal",]
-      },
-      "security": {
-        "cctv": ["for home", "for workplace"],
-        "industrial guard": ["political","general purpose"]
-      }
-    }
-    window.onload = function() {
-      var subjectSel = document.getElementById("subject");
-      var topicSel = document.getElementById("topic");
-      var chapterSel = document.getElementById("chapter");
-      for (var x in subjectObject) {
-        subjectSel.options[subjectSel.options.length] = new Option(x, x);
-      }
-      subjectSel.onchange = function() {
-        //empty Chapters- and Topics- dropdowns
-        chapterSel.length = 1;
-        topicSel.length = 1;
-        //display correct values
-        for (var y in subjectObject[this.value]) {
-          topicSel.options[topicSel.options.length] = new Option(y, y);
-        }
-      }
-      topicSel.onchange = function() {
-        //empty Chapters dropdown
-        chapterSel.length = 1;
-        //display correct values
-        var z = subjectObject[subjectSel.value][this.value];
-        for (var i = 0; i < z.length; i++) {
-          chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
-        }
-      }
-    }
-    
-  </script>
-  <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-firestore.js"></script>
+<body>
+    <div class="container">
+        <form action="" id="contactForm">
+            <u style="color:  rgb(255, 110, 32)"><h1>ServiZilla</h1></u>
+            <label>Name :</label><br>
+            <div class="inputBox">
+                <input type="text" id="name" placeholder="Name" />
+            </div>
+            <br> 
+            <label> Company Name:</label><br> 
+            <div class="inputBox">
+                <input type="text" id="cname" placeholder="Company Name" />
+            </div>
+            <br> 
+            <label>
+              Phone No. :
+              </label><br>
+            <div class="inputBox">
+                <input type="text" id="pn" cols="30" rows="10" placeholder="Phone Number"></input>
+            </div>
+            <br> 
+            <label>
+              Alternate Phone No. :
+              </label><br>
+            <div class="inputBox">
+              <input type="text" id="apn" cols="30" rows="10" placeholder="Alternate Phone Number"></input>
+          </div>
+          <br> 
+          <div class="inputBox">Home Address :<br>
+            <textarea type="text" id="ha" cols="30" rows="10" placeholder="Home Address"></textarea>
+        </div>
+        <br> 
+        <div class="inputBox">Work Address :<br> 
+          <textarea type="text" id="wa" cols="30" rows="10" placeholder="Work Address"></textarea>
+      </div>
+      <br>
+      <div class="inputBox">
+        Category: <select name="category" id="subject">
+          <option value="" selected="selected"><br>Select Category</option>
+        </select>
+    </div>
+
+    <div class="inputBox"><br> 
+      Subcategory: <select name="subcategory" id="topic">
+        <option value="" selected="selected">Please select Category first</option>
+      </select>
+  </div>
+  <br> 
+  <div class="inputBox">
+    Detailing: <select name="chapter" id="chapter">
+      <option value="" selected="selected">Please select topic first</option>
+    </select>
+</div>
+<br> <br>
+        
+
+
+            <div class="inputBox" >
+                <button id="submit" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="./mail.js"></script>
   <script type="text/javascript">
-    (function(){
-      var firebaseConfig = {
-      apiKey: "AIzaSyAvhe4Nl6UXq7Llt_SXxh5UkaesDx4ghdM",
-      authDomain: "servizillaweb.firebaseapp.com",
-      projectId: "servizillaweb",
-      storageBucket: "servizillaweb.appspot.com",
-      messagingSenderId: "1030643070219",
-      appId: "1:1030643070219:web:ba57c864e06d398e461e0e",
-      measurementId: "G-LPYF0XZWQJ"
-    };
-    firebase.initializeApp(firebaseConfig);
 
-    var push_to_firebase = function(data){
-      alert("Thanks for sending a message. I'll try and get back to you as soon as possible.")
-      var db = firebase.firestore();
 
-      db.collection("data").add({
-          Name: data["n"],
-          CompanyName: data["cn"],
-          PhoneNumber: data["pn"],
-          AltPhoneNumber: data["apn"],
-          HomeAddress: data["hadd"],
-          WorkAddress: data["wadd"],
-          Category: data["subject"],
-          SubCategory: data["topic"],
-          Detailing: data["chapter"],
-          timestamp: Date.now()
-      })
-      .then(function(docRef) {
-          console.log("Data sent, ID: ", docRef.id);
-          location.reload();
-      })
-      .catch(function(error) {
-          console.error("Data could not be sent: ", error);
-      });
-    }
-
-    var contact_submit = function(){
-      var name = document.getElementById("name");
-      var cmpnam = document.getElementById("cn");
-      var phone = document.getElementById("pn");
-      var altphone = document.getElementById("apn");
-      var homeadd = document.getElementById("hadd");
-      var workadd = document.getElementById("wadd");
-      var cat = document.getElementById("subject");
-      var subcat = document.getElementById("topic");
-      var detailing = document.getElementById("chapter");
-
-      var data = {
-        "name": name.value,
-        "cmpnam": cmpnam.value,
-        "phone": phone.value,
-        "altphone": altphone.value,
-        "homeadd": homeadd.value,
-        "workadd": workadd.value,
-        "cat": cat.value,
-        "subcat": subcat.value,
-        "detailing": detailing.value
+var subjectObject = {
+        "Healthcare": {
+          "gym trainer": ["for male", "for female"],
+          "yoga instructor": ["female", "male"],
+          "pathology test": ["full body", "blood test", "vidal",]
+        },
+        "security": {
+          "cctv": ["for home", "for workplace"],
+          "industrial guard": ["political","general purpose"]
+        }
       }
-      push_to_firebase(data);
+      window.onload = function() {
+        var subjectSel = document.getElementById("subject");
+        var topicSel = document.getElementById("topic");
+        var chapterSel = document.getElementById("chapter");
+        for (var x in subjectObject) {
+          subjectSel.options[subjectSel.options.length] = new Option(x, x);
+        }
+        subjectSel.onchange = function() {
+          //empty Chapters- and Topics- dropdowns
+          chapterSel.length = 1;
+          topicSel.length = 1;
+          //display correct values
+          for (var y in subjectObject[this.value]) {
+            topicSel.options[topicSel.options.length] = new Option(y, y);
+          }
+        }
+        topicSel.onchange = function() {
+          //empty Chapters dropdown
+          chapterSel.length = 1;
+          //display correct values
+          var z = subjectObject[subjectSel.value][this.value];
+          for (var i = 0; i < z.length; i++) {
+            chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+          }
+        }
+      }
 
-    }
+    const firebaseConfig = {
+      apiKey: "AIzaSyDt44pMhOB31BpiRssTAa6_pFCBG_tnGLk",
+      authDomain: "register-66c65.firebaseapp.com",
+      databaseURL: "https://register-66c65-default-rtdb.firebaseio.com",
+      projectId: "register-66c65",
+      storageBucket: "register-66c65.appspot.com",
+      messagingSenderId: "721830103728",
+      appId: "1:721830103728:web:335d93dc33294d4a230975"
+};
 
-    document.getElementById("submit_msg").addEventListener("click", contact_submit);
+// initialize firebase
+firebase.initializeApp(firebaseConfig);
 
+// reference your database
+var contactFormDB = firebase.database().ref("contactForm");
 
-  })();
+document.getElementById("contactForm").addEventListener("submit", submitForm);
+
+function submitForm(e) {
+  e.preventDefault();
+
+  var name = getElementVal("name");
+  var cname = getElementVal("cname");
+  var pn = getElementVal("pn");
+  var apn = getElementVal("apn");
+  var ha = getElementVal("ha");
+  var wa = getElementVal("wa");
+  var subject = getElementVal("subject");
+  var topic = getElementVal("topic");
+  var chapter = getElementVal("chapter");
+
+  saveMessages(name, cname, pn,apn,ha,wa,subject,topic,chapter);
+
+  //   enable alert
+  document.querySelector(".alert").style.display = "block";
+
+  //   remove the alert
+  setTimeout(() => {
+    document.querySelector(".alert").style.display = "none";
+  }, 3000);
+
+  //   reset the form
+  document.getElementById("contactForm").reset();
+}
+
+const saveMessages = (name, cname, pn,apn,ha,wa,subject,topic,chapter) => {
+  var newContactForm = contactFormDB.push();
+
+  newContactForm.set({
+    a1_name: name,
+    a2_company: cname,
+    a3_phone: pn,
+    a4_alternatephone:apn,
+    a5_homeaddress:ha,
+    a6_workaddress:wa,
+    a7_category:subject,
+    a8_subcategory:topic,
+    a9_detaling:chapter,
+  });
+};
+
+const getElementVal = (id) => {
+  return document.getElementById(id).value;
+};
     </script>
-  </body>
-  </html>
+</body>
+
+</html>
