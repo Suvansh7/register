@@ -44,11 +44,19 @@
         border-radius: 10px;
         width: auto;
         padding: auto;
+        max-height: 200px;
+        max-width: 200px;
+        min-width: 200px;
+        min-height: 200px;
       }
       #wa{
         border-radius: 10px;
         width: auto;
         padding: auto;
+        max-height: 200px;
+        max-width: 200px;
+        min-width: 200px;
+        min-height: 200px;
       }
       #submit{
         font-size: 25px;
@@ -223,7 +231,7 @@ function submitForm(e) {
   }, 3000);
 
   //   reset the form
-  document.getElementById("contactForm").reset();
+
 }
 
 const saveMessages = (name, cname, pn,apn,ha,wa,subject,topic,chapter) => {
@@ -240,6 +248,10 @@ const saveMessages = (name, cname, pn,apn,ha,wa,subject,topic,chapter) => {
     a8_subcategory:topic,
     a9_detaling:chapter,
   });
+    
+  document.getElementById("contactForm").reset();
+  alert("Submitting your data....");
+    
 };
 
 const getElementVal = (id) => {
