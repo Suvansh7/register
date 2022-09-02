@@ -1,440 +1,439 @@
 <DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Messages | Firebase</title>
-    <link rel="stylesheet" href="./styles.css">
-
-
-    <style> 
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 21px;
-        margin: 10px;
-        text-align: center;
-        color: rgb(77, 246, 218);
-        background: #101820ff;
-      }
-      h1 {
-        text-align: center;
-        color: rgb(255, 110, 32);
-      }
-      #name{
-        border-radius: 10px;
-        height: 25px;
-      }
-      #cname{
-        border-radius: 10px;
-        height: 25px;
-      }
-
-      #pn{
-        border-radius: 10px;
-        height: 25px;
-      }
-      #apn{
-        border-radius: 10px;
-        height: 25px;
-      }
-      #ha{
-        border-radius: 10px;
-        width: auto;
-        padding: auto;
-        max-height: 200px;
-        max-width: 200px;
-        min-width: 200px;
-        min-height: 200px;
-      }
-      #wa{
-        border-radius: 10px;
-        width: auto;
-        padding: auto;
-        max-height: 200px;
-        max-width: 200px;
-        min-width: 200px;
-        min-height: 200px;
-      }
-      #submit{
-        font-size: 25px;
-  
-        color: rgb(32, 255, 214);
-        border-radius: 7px;
-        background: #101820ff;
-        border: solid ;
-      }
-      #subject{
-        border-radius: 10px;
-        height: 25px;
-      }
-      #topic{
-        border-radius: 10px;
-        height: 25px;
-      }
-      #chapter{
-        border-radius: 10px;
-        height: 25px;
-      }
-    </style>
-
-
-</head>
-
-<body>
-    <div class="container">
-        <form action="" id="contactForm">
-            <u style="color:  rgb(255, 110, 32)"><h1>ServiZilla</h1></u>
-            <label>Name :</label><br>
-            <div class="inputBox">
-                <input type="text" required id="name" placeholder="Name" />
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Messages | Firebase</title>
+        <link rel="stylesheet" href="./styles.css">
+    
+    
+        <style> 
+          body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 21px;
+            margin: 10px;
+            text-align: center;
+            color: rgb(77, 246, 218);
+            background: #101820ff;
+          }
+          h1 {
+            text-align: center;
+            color: rgb(255, 110, 32);
+          }
+          #name{
+            border-radius: 10px;
+            height: 25px;
+          }
+          #cname{
+            border-radius: 10px;
+            height: 25px;
+          }
+    
+          #pn{
+            border-radius: 10px;
+            height: 25px;
+          }
+          #apn{
+            border-radius: 10px;
+            height: 25px;
+          }
+          #mail{
+            border-radius: 10px;
+            height: 25px;
+          }
+          #pass{
+            border-radius: 10px;
+            height: 25px;
+          }
+          #ha{
+            border-radius: 10px;
+            width: auto;
+            padding: auto;
+            max-height: 200px;
+            max-width: 200px;
+            min-width: 200px;
+            min-height: 200px;
+          }
+          #wa{
+            border-radius: 10px;
+            width: auto;
+            padding: auto;
+            max-height: 200px;
+            max-width: 200px;
+            min-width: 200px;
+            min-height: 200px;
+          }
+          #submit{
+            font-size: 25px;
+      
+            color: rgb(32, 255, 214);
+            border-radius: 7px;
+            background: #101820ff;
+            border: solid ;
+          }
+          #subject{
+            border-radius: 10px;
+            height: 25px;
+          }
+          #topic{
+            border-radius: 10px;
+            height: 25px;
+          }
+        </style>
+    
+    
+    </head>
+    
+    <body>
+        <div class="container">
+            <form action="" id="contactForm">
+                <u style="color:  rgb(255, 110, 32)"><h1>ServiZilla</h1></u>
+                <label>Name :</label><br>
+                <div class="inputBox">
+                    <input type="text" required id="name" placeholder="Name" />
+                </div>
+                <br> 
+                <label> Company Name:</label><br> 
+                <div class="inputBox">
+                    <input type="text" id="cname" placeholder="Company Name" />
+                </div>
+                <br> 
+                <label for="pn">
+                  Phone No. :
+                  </label><br>
+                <div class="inputBox">
+                    <input type="tel" pattern="[0-9]{10}" maxlength="10" id="pn" cols="30" rows="10" placeholder="Phone Number" required></input>
+                </div>
+                <br> 
+                <label>
+                  Alternate Phone No. :
+                  </label><br>
+                <div class="inputBox">
+                  <input type="tel" pattern="[0-9]{10}" maxlength="10" id="apn" cols="30" rows="10" placeholder="Alternate Phone Number"></input>
+              </div>
+              <br>
+              <label for="mail"> Email :</label> <br>
+              <div class="inputBox">
+                <input type="email" id="mail" placeholder="Email"/>
+              </div>
+              <br>
+              <label for="pass"> Password:</label>
+              <div class="inputBox">
+                <input type="password" id="pass"  placeholder="Pasword"/>
+              </div>
+              <br>
+              <div class="inputBox">Home Address: <br>
+                <textarea type="text" id="ha" cols="30" rows="10" placeholder="Home Address"></textarea>
             </div>
             <br> 
-            <label> Company Name:</label><br> 
-            <div class="inputBox">
-                <input type="text" id="cname" placeholder="Company Name" />
-            </div>
-            <br> 
-            <label for="pn">
-              Phone No. :
-              </label><br>
-            <div class="inputBox">
-                <input type="tel" pattern="[0-9]{10}" maxlength="10" id="pn" cols="30" rows="10" placeholder="Phone Number" required></input>
-            </div>
-            <br> 
-            <label>
-              Alternate Phone No. :
-              </label><br>
-            <div class="inputBox">
-              <input type="tel" pattern="[0-9]{10}" maxlength="10" id="apn" cols="30" rows="10" placeholder="Alternate Phone Number"></input>
+            <div class="inputBox">Work Address :<br> 
+              <textarea type="text" id="wa" cols="30" rows="10" placeholder="Work Address"></textarea>
           </div>
-          <br> 
-          <div class="inputBox">Home Address :<br>
-            <textarea type="text" id="ha" cols="30" rows="10" placeholder="Home Address"></textarea>
+          <br>
+          <div class="inputBox">
+            Category: <select required name="category" id="subject">
+              <option value=""  selected="selected"><br>Select Category</option>
+            </select>
         </div>
-        <br> 
-        <div class="inputBox">Work Address :<br> 
-          <textarea type="text" id="wa" cols="30" rows="10" placeholder="Work Address"></textarea>
+    
+        <div class="inputBox"><br> 
+          Subcategory: <select required name="subcategory" id="topic">
+            <option value="" selected="selected">Please select Category first</option>
+          </select>
       </div>
-      <br>
-      <div class="inputBox">
-        Category: <select required name="category" id="subject">
-          <option value=""  selected="selected"><br>Select Category</option>
-        </select>
-    </div>
-
-    <div class="inputBox"><br> 
-      Subcategory: <select required name="subcategory" id="topic">
-        <option value="" selected="selected">Please select Category first</option>
-      </select>
-  </div>
-  <br> 
-  <div class="inputBox">
-    Detailing: <select name="chapter" id="chapter">
-      <option value="" selected="selected">Please select Subcategory first</option>
-    </select>
-</div>
-<br> <br>
+    <br> <br>
+            
+    
+    
+                <div class="inputBox" >
+                    <button id="submit" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+        <script src="./mail.js"></script>
+      <script type="text/javascript">
+    
+    var subjectObject = {
+        "ARCHITECTURE ( आर्किटेक्चर )":{
+        "HOUSE ARCHITECTURE ( घर का आर्किटेक्चर करने वाले )":[],
+        "MULTI-STOREY BUILDING ARCHITECTURE ( इमारतों का आर्किटेक्चर करने वाले )":[]
+    },
+    "BEAUTICIAN AND SPA SERVICES ( पार्लर और स्पा वाली )":{
+        "BEAUTICIAN ( ब्यूटिशियन)":[],
+        "BRIDAL MAKEUP ( दुल्हन का मेकअप करने वाली )":[],
+        "MAKEUP ARTIST ( मेकअप करने वाली )":[],
+        "SPA ( स्पा करने वाली )":[]
+    },
+    "CARPENTER ( बढ़ई )":{
+        "GENERAL MAINTENANCE ( सामान्य बढ़ई के काम )":[],
+        "HOME FURNITURE MAKERS ( घर के फर्नीचर बनाने वाले )":[],
+        "KITCHEN FURNITURE MAKERS ( रसोई के फर्नीचर बनाने वाले )":[],
+        "OFFICE FURNITURE MAKERS ( ऑफिस के फर्नीचर बनाने वाले )":[]
+    },    
+    "CATERING ( खानपान )":{
+        "SMALL PARTIES ( छोटी पार्टियों के लिए )":[],
+        "MEDIUM PARTIES ( मीडियम पार्टी के लिए )":[],
+        "LARGE PARTIES ( बड़ी पार्टियों के लिए )":[],
+        "TIFFIN SYSTEM ( टिफिन सर्विस )":[]
+    },
+    "CLOTH RELATED SERVICE ( कपड़ो से संभादित कार्य )":{
+        "CLOTH WASHING ( कपड़े धोना )":[],
+        "DRY-CLEANERS ( डरिक्लेनेर्स )":[],
+        "DYEING ( कपड़े डाई करने वाले )":[],
+        "IRONING ( प्रेस करने वाले )":[],
+        "TAILOR ( दर्जी )":["BOUTIQUE( बुटीक )","MEN ( आदमी की लिए )","WOMEN ( औरत की लिए )"]
+    },
+    "CREATIVITY WORKERS ( रचनात्मकता कार्य )":{
+        "GIFT PACKING ( गिफ्ट पैक करने वाले )":[],
+        "HANDICRAFT WORK ( हेंडीक्राफ्ट का काम करने वाले )":[],
+        "KNITTING ( कड़ाई बुनाई करने वाले )":[]
+    },
+    "ELECTRICIAN ( इलेक्ट्रीशियन )":{
+        "GENERAL REPAIRING ( सामान्य बिजली के काम ) ":[],
+        "HOUSE WIRING ( घर के बिजली के काम ) ":[],
+        "INDUSTRIAL WORK ( औद्योगिक कार्य ) ":[],
+        "UPPLC WORK ( यूपीपीएलसी कार्य ) ":[]
+    },
+    "ELECTRONICS REPAIRING SERVICE ( इलेक्ट्रॉनिक्स ठीक करने वाले )":{
+        "AC REPAIRING ( ए.सी. ठीक करने वाले )":[],
+        "COMPUTER/MOBIE REPAIRING ( कंप्यूटर/मोबाइल ठीक करने वाले ) ":[],
+        "FAN REPAIRING ( पंखा ठीक करने वाले )":[],
+        "GYSER REPAIRING ( गीज़र ठीक करने वाले )":[],
+        "INVERTER REPAIRING ( इन्वर्टर ठीक  करने वाले )":[],
+        "IRON REPAIRING ( प्रेस  ठीक करने वाले )":[],
+        "LAPTOP REPAIRING ( लैपटॉप ठीक करने वाले )":[],
+        "MICROWAVE/OVEN REPAIRING ( माइक्रोवेव/ओवन ठीक करने वाले )":[],
+        "REFRIGERATOR REPAIRING ( फ्रिज  ठीक करने वाले )":[],
+        "RO SERVICE REPAIRING ( र.ओ. ठीक करने वाले )":[],
+        "TV REPAIRING ( टी.वी. ठीक करने वाले )":[],
+        "WASING MACHINE REPAIRING ( वाशिंग मशीन ठीक करने वाले )":[]
+    },
+    "EVENTS ( समारोह के लिए )":{   
+        "ANCHORS ( मंच संचालक )":[],
+        "BALOON (गुब्बारे वाले )":[],
+        "BANDWALE ( बैंड वाले )":[],
+        "CHOREOGRAPHER ( डांस सिखाने वाले )":[],
+        "DANCERS ( नृत्य करने वाले )":[],
+        "DECORATORS ( सजाने वाले )":[],
+        "DJ ( डी.जे. )":[],
+        "EVENT MANAGER ( समारोह सँभालने वाले )":[],
+        "HALWAI ( हलवाई )":[],
+        "KAVYE SAMELAN ( काव्ये सम्मेलन )":[],
+        "MAGICIAN ( जादूगर )":[],    
+        "SINGERS (गायक )":[],  
+        "VIDEO-GRAPHER ( वीडियो बनाने वाले )":[]      
+    },
+    "FABRICATION WORK ( निर्माण कार्य )":{
+        "ALUMINUM WORK ( एलुमिनियम का काम )":[],
+        "FIBER SHEET ( फाइबर शीट देने वाले )":[],
+        "TIN SHADE PROVIDERS ( टिन की छतरी देने वाले )":[],
+        "WELDERS ( जाल लगानेवाला,लोहा जोड़नेवाला )":[]
+    },
+    "GARDENER ( माली )":{
+      "HOME PLANTS ( घरेलू पौधे बागवानी )":[],
+      "LAWN ( बगीचा )":[],  
+      "NURSERY ( पौधशाला )":[],    
+      "SOCIETY GROUNDS ( सोसायटी ग्राउंड गार्डनिंग )":[]
+    },
+    "HEALTH CARE ( स्वास्थ्य देखभाल )":{
+        "AEROBICS ( एरोबिक्स )":[],
+        "COUNSELLOR ( काउंसलर)":[],
+        "GYM TRAINER ( जिम ट्रेनर )":[],
+        "NURSE/COMPOUNDER ( नर्स/कम्पाउण्डर )":[],
+        "NUTRITIONIST ( पोषणविद्‍ )":[],
+        "PATHOLOGY TEST ( पैथोलोजी )":[],
+        "PHYSIOTHERAPY ( भौतिक चिकित्सा )":[],
+        "PSYCHOLOGIST ( मनोविज्ञानी )":[],  
+        "YOGA ( योग टीचर )":[],
+        "ZUMBA ( ज़ुम्बा )":[]    
+    },
+    "HOME DÉCOR ( घर की सजावट करने वाले )":{
+        "ARCHITECTURE ( आर्किटेक्चर )":[],
+        "INTERIOR DESIGNERS ( इंटीरियर डिज़ाइनर )":[],
+        "POP ( पी.ओ.पी )":[],
+        "SHOWPIECE ITEMS ( शोपीस आइटम्स )":[],
+        "WALL PAPER ( वॉलपेपर )":[]    
+    },    
+    "HOME TUTOR ( घरेलू शिक्षक )":{    
+        "ACADEMICS ( एकेडेमिक्स के शिक्षक )":[],
+        "COMMUNICATION SKILLS ( संचार कौशल )":[],
+        "COUNSELLOR ( काउंसलर )":[],
+        "DANCE( नृत्य के शिक्षक )":[],
+        "LANGUAGE TUTIONS ( भाषाएं सिखाने के लिए शिक्षक ) ":[],
+        "MUSICAL INSTRUMENT ( संगीत के उपकरण  के शिक्षक )":[],
+        "PERSONALITY DEVELOPMENT CLASSES ( व्यक्तित्व विकास की क्लासेज )":[],
+        "PROGRAMMING TUTIONS ( प्रोग्रामिंग के शिक्षक )":[],
+        "SINGING ( संगीत के शिक्षक )":[],
+        "WRITING SKILLS ( लेखन कौशल )":[]       
+    },
+    "HOUSEMAID ( घर पर काम करने वाले )":{ 
+        "BABY-SITTER ( आया )":[],
+        "BARTAN-DHONA ( बर्तन धोना )":[],
+        "DUSTING ( झड़ाई )":[],
+        "FULL TIME HOUSE MAID ( पूरा समय काम वाली/वाला )":[],
+        "JHADU-POCHA ( झाड़ू-पोछा )":[],
+        "KAPDE-DHONA ( कपड़े धोना )":[],
+        "OCCASIONAL CLEANING ( त्योहारों की सफाई )":[],
+        "9-5 HOUSE MAID ( ९-५ काम करने वाले )":[]
+    },
+      "MASON ( मिस्त्री )":{
+        "LABOUR ( मज़दूर )":[],
+        "RAAJ MISTRI ( राजमिस्त्री )":[], 
+    },
+    "OTHER SERVICES ( अन्य सेवाएं )":{
+        "BARBER ( नाई )":[],
+        "CLEANING WORK AGENCY FOR ORGANISATION ( साफ़-सफाई की एजेंसी )":[],
+        "MEDICINE VENDOR ( दवाई घर पे डिलीवर करना )":[],
+        "PRIEST ( पंडित )":[],
+        "SCRAP COLLECTOR ( रद्दी वाला )":[],
+        "SEPTIC CLEANERS ( सेप्टिक क्लीनर्स )":[],
+        "VEGETABLE VENDOR ( सब्जी घर पे डिलीवर करना )":[],  
+    },
+    "PAINTERS ( पेंटर )":{
+        "WALL PAINTERS ( पेंटर )":[],
+        "WOODEN POLISHING ( पोलिश करने वाले )":[]
+    },
+    "PET RELATED SERVICES ( पालतू पशु से संभादित सेवाएं )":{
+        "FOR AQUARIUM ( मछलीघर के लिए )":[],
+        "FOR BIRDS ( पंछी के लिए )":[],
+        "FOR CATS ( बिल्ली के लिए )":[],
+        "FOR DOGS ( कुत्तो के लिए )":[]   
+    },
+    "PLUMBER ( प्लंबर )":{
+        "BATHROOM CLEANING ( बाथरूम की सफाई )":[],
+        "GENERAL MAINTENANCE ( सामान्य नल और पाइप के काम )":[],
+        "SANITARY FIITING ( नल और पाइप की फिटिंग करने वाले )":[],
+        "WATER TANK-CLEANERS( टैंक साफ़ करने वाले )":[]
         
-
-
-            <div class="inputBox" >
-                <button id="submit" type="submit">Submit</button>
-            </div>
-        </form>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
-    <script src="./mail.js"></script>
-  <script type="text/javascript">
-
-var subjectObject = {
-    "ARCHITECTURE ( आर्किटेक्चर )":{
-    "HOUSE ARCHITECTURE ( घर का आर्किटेक्चर करने वाले )":[],
-    "MULTI-STOREY BUILDING ARCHITECTURE ( इमारतों का आर्किटेक्चर करने वाले )":[]
-},
-"BEAUTICIAN AND SPA SERVICES ( पार्लर और स्पा वाली )":{
-    "BEAUTICIAN ( ब्यूटिशियन)":[],
-    "BRIDAL MAKEUP ( दुल्हन का मेकअप करने वाली )":[],
-    "MAKEUP ARTIST ( मेकअप करने वाली )":[],
-    "SPA ( स्पा करने वाली )":[]
-},
-"CARPENTER ( बढ़ई )":{
-    "GENERAL MAINTENANCE ( सामान्य बढ़ई के काम )":[],
-    "HOME FURNITURE MAKERS ( घर के फर्नीचर बनाने वाले )":[],
-    "KITCHEN FURNITURE MAKERS ( रसोई के फर्नीचर बनाने वाले )":[],
-    "OFFICE FURNITURE MAKERS ( ऑफिस के फर्नीचर बनाने वाले )":[]
-},    
-"CATERING ( खानपान )":{
-    "SMALL PARTIES ( छोटी पार्टियों के लिए )":[],
-    "MEDIUM PARTIES ( मीडियम पार्टी के लिए )":[],
-    "LARGE PARTIES ( बड़ी पार्टियों के लिए )":[],
-    "TIFFIN SYSTEM ( टिफिन सर्विस )":[]
-},
-"CLOTH RELATED SERVICE ( कपड़ो से संभादित कार्य )":{
-    "CLOTH WASHING ( कपड़े धोना )":[],
-    "DRY-CLEANERS ( डरिक्लेनेर्स )":[],
-    "DYEING ( कपड़े डाई करने वाले )":[],
-    "IRONING ( प्रेस करने वाले )":[],
-    "TAILOR ( दर्जी )":["BOUTIQUE( बुटीक )","MEN ( आदमी की लिए )","WOMEN ( औरत की लिए )"]
-},
-"CREATIVITY WORKERS ( रचनात्मकता कार्य )":{
-    "GIFT PACKING ( गिफ्ट पैक करने वाले )":[],
-    "HANDICRAFT WORK ( हेंडीक्राफ्ट का काम करने वाले )":[],
-    "KNITTING ( कड़ाई बुनाई करने वाले )":[]
-},
-"ELECTRICIAN ( इलेक्ट्रीशियन )":{
-    "GENERAL REPAIRING ( सामान्य बिजली के काम ) ":[],
-    "HOUSE WIRING ( घर के बिजली के काम ) ":[],
-    "INDUSTRIAL WORK ( औद्योगिक कार्य ) ":[],
-    "UPPLC WORK ( यूपीपीएलसी कार्य ) ":[]
-},
-"ELECTRONICS REPAIRING SERVICE ( इलेक्ट्रॉनिक्स ठीक करने वाले )":{
-    "AC REPAIRING ( ए.सी. ठीक करने वाले )":[],
-    "COMPUTER/MOBIE REPAIRING ( कंप्यूटर/मोबाइल ठीक करने वाले ) ":[],
-    "FAN REPAIRING ( पंखा ठीक करने वाले )":[],
-    "GYSER REPAIRING ( गीज़र ठीक करने वाले )":[],
-    "INVERTER REPAIRING ( इन्वर्टर ठीक  करने वाले )":[],
-    "IRON REPAIRING ( प्रेस  ठीक करने वाले )":[],
-    "LAPTOP REPAIRING ( लैपटॉप ठीक करने वाले )":[],
-    "MICROWAVE/OVEN REPAIRING ( माइक्रोवेव/ओवन ठीक करने वाले )":[],
-    "REFRIGERATOR REPAIRING ( फ्रिज  ठीक करने वाले )":[],
-    "RO SERVICE REPAIRING ( र.ओ. ठीक करने वाले )":[],
-    "TV REPAIRING ( टी.वी. ठीक करने वाले )":[],
-    "WASING MACHINE REPAIRING ( वाशिंग मशीन ठीक करने वाले )":[]
-},
-"EVENTS ( समारोह के लिए )":{   
-    "ANCHORS ( मंच संचालक )":[],
-    "BALOON (गुब्बारे वाले )":[],
-    "BANDWALE ( बैंड वाले )":[],
-    "CHOREOGRAPHER ( डांस सिखाने वाले )":[],
-    "DANCERS ( नृत्य करने वाले )":[],
-    "DECORATORS ( सजाने वाले )":[],
-    "DJ ( डी.जे. )":[],
-    "EVENT MANAGER ( समारोह सँभालने वाले )":[],
-    "HALWAI ( हलवाई )":[],
-    "KAVYE SAMELAN ( काव्ये सम्मेलन )":[],
-    "MAGICIAN ( जादूगर )":[],    
-    "SINGERS (गायक )":[],  
-    "VIDEO-GRAPHER ( वीडियो बनाने वाले )":[]      
-},
-"FABRICATION WORK ( निर्माण कार्य )":{
-    "ALUMINUM WORK ( एलुमिनियम का काम )":["ALUMINIUM GATE MAKER ( एलुमिनियम के दरवाज़े बनाने वाला )","ALUMINIUM SECTION MAKER ( एलुमिनियम के सेक्शन बनाने वाला )","ALUMINIUM WARDROBE ( एलुमिनियम का काम )","ALUMINIUM WINDOW MAKER ( एलुमिनियम की खिड़की बनाने वाला )"],
-    "FIBER SHEET ( फाइबर शीट देने वाले )":[],
-    "TIN SHADE PROVIDERS ( टिन की छतरी देने वाले )":[],
-    "WELDERS ( जाल लगानेवाला,लोहा जोड़नेवाला )":[]
-},
-"GARDENER ( माली )":{
-  "HOME PLANTS ( घरेलू पौधे बागवानी )":[],
-  "LAWN ( बगीचा )":[],  
-  "NURSERY ( पौधशाला )":[],    
-  "SOCIETY GROUNDS ( सोसायटी ग्राउंड गार्डनिंग )":[]
-},
-"HEALTH CARE ( स्वास्थ्य देखभाल )":{
-    "AEROBICS ( एरोबिक्स )":[],
-    "COUNSELLOR ( काउंसलर)":[],
-    "GYM TRAINER ( जिम ट्रेनर )":["FEMALE ( औरत के लिए )","MALE ( आदमी के लिए )"],
-    "NURSE/COMPOUNDER ( नर्स/कम्पाउण्डर )":[],
-    "NUTRITIONIST ( पोषणविद्‍ )":[],
-    "PATHOLOGY TEST ( पैथोलोजी )":[],
-    "PHYSIOTHERAPY ( भौतिक चिकित्सा )":[],
-    "PSYCHOLOGIST ( मनोविज्ञानी )":[],  
-    "YOGA ( योग टीचर )":[],
-    "ZUMBA ( ज़ुम्बा )":[]    
-},
-"HOME DÉCOR ( घर की सजावट करने वाले )":{
-    "ARCHITECTURE ( आर्किटेक्चर )":[],
-    "INTERIOR DESIGNERS ( इंटीरियर डिज़ाइनर )":[],
-    "POP ( पी.ओ.पी )":[],
-    "SHOWPIECE ITEMS ( शोपीस आइटम्स )":[],
-    "WALL PAPER ( वॉलपेपर )":[]    
-},    
-"HOME TUTOR ( घरेलू शिक्षक )":{    
-    "ACADEMICS ( एकेडेमिक्स के शिक्षक )":[],
-    "COMMUNICATION SKILLS ( संचार कौशल )":[],
-    "COUNSELLOR ( काउंसलर )":[],
-    "DANCE( नृत्य के शिक्षक )":["BHARATNATYAM ( भरतनाट्यम )","CONTEMPORARY(कंटेम्पररी )","FREE-STYLE(फ्रीस्टाइल )","HIP-HOP ( हिप-हॉप )","KATHAK ( कत्थक )","KATHAKALI(कथकली )","MANIPURI(मणिपुरी )",],
-    "LANGUAGE TUTIONS ( भाषाएं सिखाने के लिए शिक्षक ) ":["CHINESE ( चीनी )","ENGLISH ( अंग्रेज़ी )","FRENCH ( फ्रेंच )","GERMAN ( जर्मन )","HINDI ( हिंदी )","REGIONAL ( स्थानीय भाषा )","SPANISH ( स्पेनिश )","URDU ( उर्दू )"],
-    "MUSICAL INSTRUMENT ( संगीत के उपकरण  के शिक्षक )":["CONGO ( कांगो )","DRUM ( ड्रम )","FLUTE ( बांसुरी )","GUITAR ( गिटार )","PIANO ( पियानो )","TABLA ( तबला )","VIOLIN"],
-    "PERSONALITY DEVELOPMENT CLASSES ( व्यक्तित्व विकास की क्लासेज )":[],
-    "PROGRAMMING TUTIONS ( प्रोग्रामिंग के शिक्षक )":["AWS","C ( सी )","C++ ( सी++ )","C#","HTML","CSS","JAVA ( जावा )","JAVASCRIPT","KOTLIN","PEARL","PHP","PYTHON ( पाइथन )","R","RUBY","SQL",],
-    "SINGING ( संगीत के शिक्षक )":[],
-    "WRITING SKILLS ( लेखन कौशल )":[]       
-},
-"HOUSEMAID ( घर पर काम करने वाले )":{ 
-    "BABY-SITTER ( आया )":[],
-    "BARTAN-DHONA ( बर्तन धोना )":[],
-    "DUSTING ( झड़ाई )":[],
-    "FULL TIME HOUSE MAID ( पूरा समय काम वाली/वाला )":[],
-    "JHADU-POCHA ( झाड़ू-पोछा )":[],
-    "KAPDE-DHONA ( कपड़े धोना )":[],
-    "OCCASIONAL CLEANING ( त्योहारों की सफाई )":[],
-    "9-5 HOUSE MAID ( ९-५ काम करने वाले )":[]
-},
-  "MASON ( मिस्त्री )":{
-    "LABOUR ( मज़दूर )":[],
-    "RAAJ MISTRI ( राजमिस्त्री )":[], 
-},
-"OTHER SERVICES ( अन्य सेवाएं )":{
-    "BARBER ( नाई )":[],
-    "CLEANING WORK AGENCY FOR ORGANISATION ( साफ़-सफाई की एजेंसी )":[],
-    "MEDICINE VENDOR ( दवाई घर पे डिलीवर करना )":[],
-    "PRIEST ( पंडित )":[],
-    "SCRAP COLLECTOR ( रद्दी वाला )":[],
-    "SEPTIC CLEANERS ( सेप्टिक क्लीनर्स )":[],
-    "VEGETABLE VENDOR ( सब्जी घर पे डिलीवर करना )":[],  
-},
-"PAINTERS ( पेंटर )":{
-    "WALL PAINTERS ( पेंटर )":[],
-    "WOODEN POLISHING ( पोलिश करने वाले )":[]
-},
-"PET RELATED SERVICES ( पालतू पशु से संभादित सेवाएं )":{
-    "FOR AQUARIUM ( मछलीघर के लिए )":[],
-    "FOR BIRDS ( पंछी के लिए )":[],
-    "FOR CATS ( बिल्ली के लिए )":[],
-    "FOR DOGS ( कुत्तो के लिए )":[]   
-},
-"PLUMBER ( प्लंबर )":{
-    "BATHROOM CLEANING ( बाथरूम की सफाई )":[],
-    "GENERAL MAINTENANCE ( सामान्य नल और पाइप के काम )":[],
-    "SANITARY FIITING ( नल और पाइप की फिटिंग करने वाले )":["FOR HOME ( घर की लिए )","FOR OFFICES ( ऑफिस की लिए )"],
-    "WATER TANK-CLEANERS( टैंक साफ़ करने वाले )":[]
+    },
+    "PROJECT MAKERS ( प्रोजेक्ट बनाने वाले )":{
+        "ASSIGNMENT MAKERS ( असाइनमेंट करने वाले )":[],
+        "PROJECT GUIDANCE ( प्रोजेक्ट के लिए गाइड करने वाले )":[],
+        "SCHOOL PROJECT MAKERS ( स्कूल का प्रोजेक्ट बनाने वाले )":[]
+    },
+    "REPAIRING SERVICE ( मरम्मत के लिए )":{
+        "COBBLER ( मोची )":[],
+        "FOLDING REPAIRING ( फोल्डिंग पलंग ठीक करने वाले )":[],
+        "GAS-BURNER REPAIRING ( गैस का चूला ठीक करने वाले )":[],
+        "LOCK-KEY REPAIRING ( ताला-चाबी बनाने वाले )":[],
+        "PRESSURE-COOKER REPAIRING ( कुकर ठीक करने वाले )":[]    
+    },
     
-},
-"PROJECT MAKERS ( प्रोजेक्ट बनाने वाले )":{
-    "ASSIGNMENT MAKERS ( असाइनमेंट करने वाले )":[],
-    "PROJECT GUIDANCE ( प्रोजेक्ट के लिए गाइड करने वाले )":["B.SC./M.SC./PHD(बी.एससी./एम.एससी/पी.एचडी.)","FOR B.TECH/ M.TECH/ PHD(बी.टेक/एम.टेक/पी.एचडी)",
-    "FOR B.A./ M.A./ PHD(बी . ए./एम.ए./पी.एचडी)","FOR BB A/MBA ( बी.बी.ए./एम.बी.ए.)","FOR OTHERS ( अन्य लोगो के लिए )"],
-    "SCHOOL PROJECT MAKERS ( स्कूल का प्रोजेक्ट बनाने वाले )":[]
-},
-"REPAIRING SERVICE ( मरम्मत के लिए )":{
-    "COBBLER ( मोची )":[],
-    "FOLDING REPAIRING ( फोल्डिंग पलंग ठीक करने वाले )":[],
-    "GAS-BURNER REPAIRING ( गैस का चूला ठीक करने वाले )":[],
-    "LOCK-KEY REPAIRING ( ताला-चाबी बनाने वाले )":[],
-    "PRESSURE-COOKER REPAIRING ( कुकर ठीक करने वाले )":[]    
-},
-
-"SECURITY ( सिक्योरिटी )":{
-    "BODY GUARDS ( अंगरक्षक )":[],
-    "CCTV INSTALLATION ( सीसीटीवी कैमरा को चलाने वाला )":[],
-    "SECURITY AGENCY ( सिक्योरिटी एजेंसी )":[],
-    "SECURITY GUARD ( चौकीदार )":[]   
-},
-"TRANSPORTATION ( परिवहन से सम्बंधित )":{
-    "DRIVERS ( गाड़ी चलाने वाले )":[],
-    "DRIVING TRAINING":[],
-    "E-RICKSHAW ( ई रिक्शा वाले )":[],
-    "LOADING( गाड़ी भरने वाले )":[],
-    "PACKERS AND MOVERS ( पैकर्स और मोवेर्स )":[],
-    "TRAVEL AGENCY ( यात्रा संस्था )":[],  
-    "VEHICLE ON RENT ( रेंट पर गाड़ी देने वाले )":[]
-},
-"VEHICLE SERVICES ( वाहन के लिए )":{
-    "CYCLE MAINTAINENCE ( साइकिल ठीक करने वाले )":[],
-    "PUNCTURE ( पंचर ठीक करने वाले )":[],
-    "VEHICLE BATTERY PROBLEM ( गाड़ी की बैटरी ठीक करने वाला )":[],
-    "VEHICLE MAINTAINANCE ( व्हीकल ठीक करना या सर्विसिंग के लिए )":[],
-    "VEHICLE WASHING ( गाड़ी धोना )":[]  
-}
-      }
-      window.onload = function() {
-        var subjectSel = document.getElementById("subject");
-        var topicSel = document.getElementById("topic");
-        var chapterSel = document.getElementById("chapter");
-        for (var x in subjectObject) {
-          subjectSel.options[subjectSel.options.length] = new Option(x, x);
-        }
-        subjectSel.onchange = function() {
-          //empty Chapters- and Topics- dropdowns
-          chapterSel.length = 1;
-          topicSel.length = 1;
-          //display correct values
-          for (var y in subjectObject[this.value]) {
-            topicSel.options[topicSel.options.length] = new Option(y, y);
+    "SECURITY ( सिक्योरिटी )":{
+        "BODY GUARDS ( अंगरक्षक )":[],
+        "CCTV INSTALLATION ( सीसीटीवी कैमरा को चलाने वाला )":[],
+        "SECURITY AGENCY ( सिक्योरिटी एजेंसी )":[],
+        "SECURITY GUARD ( चौकीदार )":[]   
+    },
+    "TRANSPORTATION ( परिवहन से सम्बंधित )":{
+        "DRIVERS ( गाड़ी चलाने वाले )":[],
+        "DRIVING TRAINING":[],
+        "E-RICKSHAW ( ई रिक्शा वाले )":[],
+        "LOADING( गाड़ी भरने वाले )":[],
+        "PACKERS AND MOVERS ( पैकर्स और मोवेर्स )":[],
+        "TRAVEL AGENCY ( यात्रा संस्था )":[],  
+        "VEHICLE ON RENT ( रेंट पर गाड़ी देने वाले )":[]
+    },
+    "VEHICLE SERVICES ( वाहन के लिए )":{
+        "CYCLE MAINTAINENCE ( साइकिल ठीक करने वाले )":[],
+        "PUNCTURE ( पंचर ठीक करने वाले )":[],
+        "VEHICLE BATTERY PROBLEM ( गाड़ी की बैटरी ठीक करने वाला )":[],
+        "VEHICLE MAINTAINANCE ( व्हीकल ठीक करना या सर्विसिंग के लिए )":[],
+        "VEHICLE WASHING ( गाड़ी धोना )":[]  
+    }
           }
-        }
-        topicSel.onchange = function() {
-          //empty Chapters dropdown
-          chapterSel.length = 1;
-          //display correct values
-          var z = subjectObject[subjectSel.value][this.value];
-          for (var i = 0; i < z.length; i++) {
-            chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+          window.onload = function() {
+            var subjectSel = document.getElementById("subject");
+            var topicSel = document.getElementById("topic");
+            for (var x in subjectObject) {
+              subjectSel.options[subjectSel.options.length] = new Option(x, x);
+            }
+            subjectSel.onchange = function() {
+              //empty Chapters- and Topics- dropdowns
+              topicSel.length = 1;
+              //display correct values
+              for (var y in subjectObject[this.value]) {
+                topicSel.options[topicSel.options.length] = new Option(y, y);
+              }
+            }
           }
-        }
-      }
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyDt44pMhOB31BpiRssTAa6_pFCBG_tnGLk",
-      authDomain: "register-66c65.firebaseapp.com",
-      databaseURL: "https://register-66c65-default-rtdb.firebaseio.com",
-      projectId: "register-66c65",
-      storageBucket: "register-66c65.appspot.com",
-      messagingSenderId: "721830103728",
-      appId: "1:721830103728:web:335d93dc33294d4a230975"
-};
-
-// initialize firebase
-firebase.initializeApp(firebaseConfig);
-
-// reference your database
-var contactFormDB = firebase.database().ref("contactForm");
-
-document.getElementById("contactForm").addEventListener("submit", submitForm);
-
-function submitForm(e) {
-  e.preventDefault();
-
-  var name = getElementVal("name");
-  var cname = getElementVal("cname");
-  var pn = getElementVal("pn");
-  var apn = getElementVal("apn");
-  var ha = getElementVal("ha");
-  var wa = getElementVal("wa");
-  var subject = getElementVal("subject");
-  var topic = getElementVal("topic");
-  var chapter = getElementVal("chapter");
-
-  saveMessages(name, cname, pn,apn,ha,wa,subject,topic,chapter);
-
-  //   enable alert
-  document.querySelector(".alert").style.display = "block";
-
-  //   remove the alert
-  setTimeout(() => {
-    document.querySelector(".alert").style.display = "none";
-  }, 3000);
-
-  //   reset the form
-
-}
-
-const saveMessages = (name, cname, pn,apn,ha,wa,subject,topic,chapter) => {
-  var newContactForm = contactFormDB.push();
-
-  newContactForm.set({
-    a1_name: name,
-    a2_company: cname,
-    a3_phone: pn,
-    a4_alternatephone:apn,
-    a5_homeaddress:ha,
-    a6_workaddress:wa,
-    a7_category:subject,
-    a8_subcategory:topic,
-    a9_detaling:chapter,
-  });
     
-  document.getElementById("contactForm").reset();
-  alert("Submitting your data....");
+        const firebaseConfig = {
+          apiKey: "AIzaSyDt44pMhOB31BpiRssTAa6_pFCBG_tnGLk",
+          authDomain: "register-66c65.firebaseapp.com",
+          databaseURL: "https://register-66c65-default-rtdb.firebaseio.com",
+          projectId: "register-66c65",
+          storageBucket: "register-66c65.appspot.com",
+          messagingSenderId: "721830103728",
+          appId: "1:721830103728:web:335d93dc33294d4a230975"
+    };
     
-};
-
-const getElementVal = (id) => {
-  return document.getElementById(id).value;
-};
-    </script>
-</body>
-
-</html>
+    // initialize firebase
+    firebase.initializeApp(firebaseConfig);
+    
+    // reference your database
+    var contactFormDB = firebase.database().ref("contactForm");
+    
+    document.getElementById("contactForm").addEventListener("submit", submitForm);
+    
+    function submitForm(e) {
+      e.preventDefault();
+    
+      var name = getElementVal("name");
+      var cname = getElementVal("cname");
+      var pn = getElementVal("pn");
+      var apn = getElementVal("apn");
+      var mail=getElementVal("mail");
+      var pass=getElementVal("pass");
+      var ha = getElementVal("ha");
+      var wa = getElementVal("wa");
+      var subject = getElementVal("subject");
+      var topic = getElementVal("topic");
+      
+    
+      saveMessages(name, cname, pn,apn, mail, pass, ha,wa,subject,topic);
+    
+      //   enable alert
+      document.querySelector(".alert").style.display = "block";
+    
+      //   remove the alert
+      setTimeout(() => {
+        document.querySelector(".alert").style.display = "none";
+      }, 3000);
+    
+      //   reset the form
+    
+    }
+    
+    const saveMessages = (name, cname, pn,apn, mail, pass,ha,wa,subject,topic) => {
+      var newContactForm = contactFormDB.push();
+    
+      newContactForm.set({
+        a1_name: name,
+        a2_company: cname,
+        a3_phone: pn,
+        a4_alternatephone:apn,
+        a5_email: mail,
+        a6_password: pass,
+        a7_homeaddress: ha,
+        a8_workaddress: wa,
+        a9_category:subject,
+        a10_subcategory:topic
+      });
+        
+      document.getElementById("contactForm").reset();
+      alert("YOUR DATA HAS BEEN SUBMITTED SUCCESSFULLY..");
+        
+    };
+    
+    const getElementVal = (id) => {
+      return document.getElementById(id).value;
+    };
+        </script>
+    </body>
+    
+    </html>
